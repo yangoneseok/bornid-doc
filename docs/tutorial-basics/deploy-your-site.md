@@ -2,30 +2,30 @@
 sidebar_position: 5
 ---
 
-# Deploy your site
+# 사이트 배포
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+Docusaurus는 **정적 사이트 생성기**(**[Jamstack](https://jamstack.org/)**라고도 불림)입니다.
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+사이트를 간단한 **정적 HTML, JavaScript, CSS 파일**로 빌드합니다.
 
-## Build your site
+## 사이트 빌드
 
-Build your site **for production**:
+**프로덕션용**으로 사이트를 빌드하세요:
 
 ```bash
 npm run build
 ```
 
-The static files are generated in the `build` folder.
+정적 파일들이 `build` 폴더에 생성됩니다.
 
-## Deploy your site
+## 사이트 배포
 
-Test your production build locally:
+프로덕션 빌드를 로컬에서 테스트하세요:
 
 ```bash
 npm run serve
 ```
 
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
+이제 `build` 폴더가 [http://localhost:3000/](http://localhost:3000/)에서 서빙됩니다.
 
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+이제 `build` 폴더를 **거의 모든 곳에** 쉽게, **무료로** 또는 매우 저렴한 비용으로 배포할 수 있습니다(**[배포 가이드](https://docusaurus.io/docs/deployment)** 참조).

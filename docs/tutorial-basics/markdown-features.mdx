@@ -2,13 +2,13 @@
 sidebar_position: 4
 ---
 
-# Markdown Features
+# 마크다운 기능
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Docusaurus는 **[마크다운](https://daringfireball.net/projects/markdown/syntax)**과 몇 가지 **추가 기능**을 지원합니다.
 
 ## Front Matter
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+마크다운 문서는 상단에 [Front Matter](https://jekyllrb.com/docs/front-matter/)라는 메타데이터를 가지고 있습니다:
 
 ```text title="my-doc.md"
 // highlight-start
@@ -20,46 +20,46 @@ slug: /my-custom-url
 ---
 // highlight-end
 
-## Markdown heading
+## 마크다운 제목
 
-Markdown text with [links](./hello.md)
+[링크](./hello.md)가 있는 마크다운 텍스트
 ```
 
-## Links
+## 링크
 
-Regular Markdown links are supported, using url paths or relative file paths.
+일반 마크다운 링크가 지원되며, URL 경로나 상대 파일 경로를 사용할 수 있습니다.
 
 ```md
-Let's see how to [Create a page](/create-a-page).
+[페이지 생성](/create-a-page) 방법을 알아봅시다.
 ```
 
 ```md
-Let's see how to [Create a page](./create-a-page.md).
+[페이지 생성](./create-a-page.md) 방법을 알아봅시다.
 ```
 
-**Result:** Let's see how to [Create a page](./create-a-page.md).
+**결과:** [페이지 생성](./create-a-page.md) 방법을 알아봅시다.
 
-## Images
+## 이미지
 
-Regular Markdown images are supported.
+일반 마크다운 이미지가 지원됩니다.
 
-You can use absolute paths to reference images in the static directory (`static/img/docusaurus.png`):
+정적 디렉토리(`static/img/docusaurus.png`)의 이미지를 참조하기 위해 절대 경로를 사용할 수 있습니다:
 
 ```md
-![Docusaurus logo](/img/docusaurus.png)
+![Docusaurus 로고](/img/docusaurus.png)
 ```
 
-![Docusaurus logo](/img/docusaurus.png)
+![Docusaurus 로고](/img/docusaurus.png)
 
-You can reference images relative to the current file as well. This is particularly useful to colocate images close to the Markdown files using them:
+현재 파일을 기준으로 상대 경로로 이미지를 참조할 수도 있습니다. 이는 마크다운 파일과 함께 사용할 이미지를 가까운 곳에 배치하는 데 특히 유용합니다:
 
 ```md
-![Docusaurus logo](./img/docusaurus.png)
+![Docusaurus 로고](./img/docusaurus.png)
 ```
 
-## Code Blocks
+## 코드 블록
 
-Markdown code blocks are supported with Syntax highlighting.
+구문 강조가 지원되는 마크다운 코드 블록을 사용할 수 있습니다.
 
 ````md
 ```jsx title="src/components/HelloDocusaurus.js"
@@ -75,39 +75,39 @@ function HelloDocusaurus() {
 }
 ```
 
-## Admonitions
+## 주의사항 (Admonitions)
 
-Docusaurus has a special syntax to create admonitions and callouts:
+Docusaurus는 주의사항과 콜아웃을 만들기 위한 특별한 구문을 제공합니다:
 
 ```md
-:::tip My tip
+:::tip 팁
 
-Use this awesome feature option
+이 멋진 기능 옵션을 사용하세요
 
 :::
 
-:::danger Take care
+:::danger 주의
 
-This action is dangerous
+이 작업은 위험합니다
 
 :::
 ```
 
-:::tip My tip
+:::tip 팁
 
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
+이 멋진 기능 옵션을 사용하세요
 
 :::
 
-## MDX and React Components
+:::danger 주의
 
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
+이 작업은 위험합니다
+
+:::
+
+## MDX와 React 컴포넌트
+
+[MDX](https://mdxjs.com/)는 문서를 더욱 **인터랙티브**하게 만들고 **마크다운 내에서 React 컴포넌트**를 사용할 수 있게 해줍니다:
 
 ```jsx
 export const Highlight = ({children, color}) => (
@@ -120,15 +120,15 @@ export const Highlight = ({children, color}) => (
       cursor: 'pointer',
     }}
     onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
+      alert(`라벨 ${children}과 함께 색상 ${color}를 클릭했습니다`)
     }}>
     {children}
   </span>
 );
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+이것은 <Highlight color="#25c2a0">Docusaurus 그린</Highlight> 입니다!
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+이것은 <Highlight color="#1877F2">Facebook 블루</Highlight> 입니다!
 ```
 
 export const Highlight = ({children, color}) => (
@@ -141,12 +141,12 @@ export const Highlight = ({children, color}) => (
       cursor: 'pointer',
     }}
     onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
+      alert(`라벨 ${children}과 함께 색상 ${color}를 클릭했습니다`);
     }}>
     {children}
   </span>
 );
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+이것은 <Highlight color="#25c2a0">Docusaurus 그린</Highlight> 입니다!
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+이것은 <Highlight color="#1877F2">Facebook 블루</Highlight> 입니다!

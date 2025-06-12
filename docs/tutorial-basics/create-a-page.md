@@ -2,17 +2,17 @@
 sidebar_position: 1
 ---
 
-# Create a Page
+# 페이지 생성
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+`src/pages`에 **Markdown 또는 React** 파일을 추가하여 **독립 페이지**를 생성할 수 있습니다:
 
 - `src/pages/index.js` → `localhost:3000/`
 - `src/pages/foo.md` → `localhost:3000/foo`
 - `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
 
-## Create your first React Page
+## 첫 번째 React 페이지 생성
 
-Create a file at `src/pages/my-react-page.js`:
+`src/pages/my-react-page.js` 파일을 생성하세요:
 
 ```jsx title="src/pages/my-react-page.js"
 import React from 'react';
@@ -28,11 +28,11 @@ export default function MyReactPage() {
 }
 ```
 
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
+이제 [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page)에서 새 페이지를 볼 수 있습니다.
 
-## Create your first Markdown Page
+## 첫 번째 Markdown 페이지 생성
 
-Create a file at `src/pages/my-markdown-page.md`:
+`src/pages/my-markdown-page.md` 파일을 생성하세요:
 
 ```mdx title="src/pages/my-markdown-page.md"
 # My Markdown page
@@ -40,4 +40,4 @@ Create a file at `src/pages/my-markdown-page.md`:
 This is a Markdown page
 ```
 
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+이제 [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page)에서 새 페이지를 볼 수 있습니다.

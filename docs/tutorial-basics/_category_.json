@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "튜토리얼 - 기초",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Docusaurus의 가장 중요한 개념을 5분 안에 배워보세요."
   }
 }

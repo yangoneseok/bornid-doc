@@ -2,56 +2,59 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# 문서 생성
 
-Documents are **groups of pages** connected through:
+문서는 다음으로 연결된 **페이지 그룹**입니다:
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+- **사이드바**
+- **이전/다음 탐색**
+- **버전 관리**
 
-## Create your first Doc
+## 첫 번째 문서 생성
 
-Create a Markdown file at `docs/hello.md`:
+`docs/hello.md`에 마크다운 파일을 생성하세요:
 
 ```md title="docs/hello.md"
-# Hello
+# 안녕하세요
 
-This is my **first Docusaurus document**!
+이것은 제 **첫 번째 Docusaurus 문서**입니다!
 ```
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+이제 [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello)에서 새 문서를 볼 수 있습니다.
 
-## Configure the Sidebar
+## 사이드바 구성
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+Docusaurus는 `docs` 폴더에서 자동으로 **사이드바를 생성**합니다.
 
-Add metadata to customize the sidebar label and position:
+사이드바 라벨과 위치를 사용자 정의하기 위해 메타데이터를 추가하세요:
 
 ```md title="docs/hello.md" {1-4}
 ---
-sidebar_label: 'Hi!'
-sidebar_position: 3
+sidebar_position: 1
+sidebar_label: '안녕!'
 ---
 
-# Hello
+# 안녕하세요
 
-This is my **first Docusaurus document**!
+이것은 제 **첫 번째 Docusaurus 문서**입니다!
 ```
 
-It is also possible to create your sidebar explicitly in `sidebars.js`:
+`sidebars.ts`에서 사이드바를 명시적으로 생성할 수도 있습니다:
 
-```js title="sidebars.js"
-export default {
+```ts title="sidebars.ts"
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
+const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
-    // highlight-next-line
     'hello',
     {
       type: 'category',
-      label: 'Tutorial',
+      label: '튜토리얼',
       items: ['tutorial-basics/create-a-document'],
     },
   ],
 };
+
+export default sidebars;
 ```
