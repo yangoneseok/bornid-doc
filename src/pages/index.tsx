@@ -21,7 +21,13 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/">
-            시작하기 - 5분 ⏱️
+            📚 API 문서 보기
+          </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/sdks"
+            style={{ marginLeft: '1rem' }}>
+            🚀 SDK 다운로드
           </Link>
         </div>
       </div>
@@ -33,8 +39,8 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="C2PA 표준 기반의 콘텐츠 진위성 검증 API. AI 지문인식과 디지털 서명으로 이미지·영상의 출처와 무결성을 실시간 검증합니다.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
