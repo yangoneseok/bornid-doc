@@ -18,22 +18,10 @@ DigiCAP Content Authenticity 서비스를 쉽게 통합할 수 있도록 iOS SDK
 
 ### 설치
 
-#### CocoaPods
+현재 SDK는 `.a` 파일 형태로 제공할 예정입니다. 
+설치 방법에 대한 자세한 내용은 아래 이메일로 문의해 주세요.
 
-```ruby
-# Podfile
-target 'YourApp' do
-  pod 'JinbonSDK', '~> 1.0.0'
-end
-```
-
-#### Swift Package Manager
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/digicap/jinbon-ios-sdk.git", from: "1.0.0")
-]
-```
+**문의**: info@digicaps.com
 
 ### 초기화
 
@@ -303,16 +291,13 @@ do {
 
 ### 기술 지원
 
-- **개발자 포털**: [https://developers.digicap.com](https://developers.digicap.com)
-- **API 문서**: [https://docs.digicap.com/api](https://docs.digicap.com/api)
-- **GitHub**: [https://github.com/digicap/jinbon-ios-sdk](https://github.com/digicap/jinbon-ios-sdk)
-- **이메일**: [dev-support@digicap.com](mailto:dev-support@digicap.com)
+- **이메일**: [info@digicaps.com](mailto:info@digicaps.com)
 
 ### 시스템 요구사항
 
-- **iOS**: 13.0 이상
+- **iOS**: 15.0 이상
 - **Xcode**: 14.0 이상
-- **Swift**: 5.7 이상
+- **Swift**: 5.0 이상
 
 ---
 
