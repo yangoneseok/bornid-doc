@@ -11,7 +11,7 @@ DigiCAP Content Authenticity 서비스를 쉽게 통합할 수 있도록 iOS SDK
 
 | 플랫폼 | 버전 | 상태 | 설치 방법 |
 |--------|------|------|-----------|
-| **iOS** | v1.0.0 | ✅ 지원 | CocoaPods/SPM |
+| **iOS** | v1.0.0 | ✅ 지원 | .a 파일 |
 | **Android** | - | 🔄 추후 지원 예정 | - |
 
 ## iOS SDK (JinbonSDK)
