@@ -11,7 +11,7 @@ DigiCAP Content Authenticity 서비스를 쉽게 통합할 수 있도록 iOS SDK
 
 | 플랫폼 | 버전 | 상태 | 설치 방법 |
 |--------|------|------|-----------|
-| **iOS** | v1.0.0 | ✅ 지원 | .a 파일 |
+| **iOS** | v0.0.1 | ✅ 지원 | .a 파일 |
 | **Android** | - | 🔄 추후 지원 예정 | - |
 
 ## iOS SDK (JinbonSDK)
@@ -36,6 +36,8 @@ JinbonSDK.shared.configure(baseURL: URL, apiKey: String)
 
 ### 사용자 인증
 
+사용자 계정으로 로그인하여 SDK의 모든 기능을 사용할 수 있습니다.
+
 ```swift
 // 로그인
 JinbonSDK.shared.login(email: String, password: String) async throws -> User
@@ -43,6 +45,8 @@ JinbonSDK.shared.login(email: String, password: String) async throws -> User
 // 사용법
 let user = try await JinbonSDK.shared.login(email: "user@example.com", password: "password")
 ```
+
+현재 로그인된 사용자의 세션을 종료합니다.
 
 ```swift
 // 로그아웃
@@ -52,6 +56,8 @@ JinbonSDK.shared.logout() async
 await JinbonSDK.shared.logout()
 ```
 
+사용자가 현재 로그인되어 있는지 확인합니다.
+
 ```swift
 // 로그인 상태 확인
 JinbonSDK.shared.isLoggedIn() async -> Bool
@@ -59,6 +65,8 @@ JinbonSDK.shared.isLoggedIn() async -> Bool
 // 사용법
 let isLoggedIn = await JinbonSDK.shared.isLoggedIn()
 ```
+
+최신 사용자 정보를 조회합니다.
 
 ```swift
 // 사용자 정보 갱신
@@ -70,6 +78,10 @@ let user = try await JinbonSDK.shared.fetchMyProfile()
 
 ### 회사 정보
 
+로그인한 사용자가 속한 회사의 정보를 조회할 수 있습니다.
+
+현재 사용자가 속한 회사의 이름을 가져옵니다.
+
 ```swift
 // 현재 회사 이름 조회
 JinbonSDK.shared.getCurrentCompanyName() async -> String?
@@ -78,23 +90,10 @@ JinbonSDK.shared.getCurrentCompanyName() async -> String?
 let companyName = await JinbonSDK.shared.getCurrentCompanyName()
 ```
 
-```swift
-// 회사 키 정보 조회
-JinbonSDK.shared.getCompanyKeys(companyId: String) async throws -> CompanyKeysResponse
-
-// 사용법
-let keys = try await JinbonSDK.shared.getCompanyKeys(companyId: "company-id")
-```
-
-```swift
-// 캐시된 회사 키 정보 조회
-JinbonSDK.shared.getCompanyKeysWithCache() async throws -> CompanyKeysResponse
-
-// 사용법
-let keys = try await JinbonSDK.shared.getCompanyKeysWithCache()
-```
 
 ### 미디어 업로드
+
+이미지나 비디오 파일을 서버에 업로드합니다. 위치 정보와 설명을 포함할 수 있으며, 선택적으로 미디어 지문(fingerprint)도 생성할 수 있습니다.
 
 ```swift
 // 미디어 업로드
@@ -120,6 +119,8 @@ let uploadURL = try await JinbonSDK.shared.uploadMedia(
 
 ### 미디어 목록 조회
 
+특정 사용자가 업로드한 미디어 목록을 페이지 단위로 조회합니다. 한 번에 가져올 개수와 시작점을 지정할 수 있습니다.
+
 ```swift
 // 미디어 목록 조회
 JinbonSDK.shared.listMedia(
@@ -130,34 +131,6 @@ JinbonSDK.shared.listMedia(
 
 // 사용법
 let mediaList = try await JinbonSDK.shared.listMedia(userId: "user-id", limit: 10)
-```
-
-### C2PA 서명
-
-```swift
-// 이미지 데이터 서명
-JinbonSDK.shared.signMedia(
-    assetData: Data,
-    thumbnailData: Data? = nil,
-    username: String,
-    company: String,
-    privateKeyData: Data,
-    publicKeyData: Data,
-    format: String,
-    additionalInfo: String? = nil,
-    latitude: Double = 0.0,
-    longitude: Double = 0.0
-) -> (signedImage: Data?, status: Int32, message: String?, manifestJson: String?)
-
-// 사용법
-let result = JinbonSDK.shared.signMedia(
-    assetData: imageData,
-    username: "사용자명",
-    company: "회사명",
-    privateKeyData: privateKey,
-    publicKeyData: publicKey,
-    format: "jpg"
-)
 ```
 
 ```swift
@@ -188,6 +161,10 @@ let result = JinbonSDK.shared.signMedia(
 
 ### 미디어 검증
 
+미디어 파일에 포함된 C2PA 서명과 메타데이터를 분석하여 콘텐츠의 진위성을 검증합니다. 조작 여부와 출처 정보를 확인할 수 있습니다.
+
+메모리에 있는 미디어 데이터의 진위성을 검증합니다. 결과는 JSON 형태로 반환됩니다.
+
 ```swift
 // 데이터 검증
 JinbonSDK.shared.verifyMedia(data: Data, ext: String) -> String?
@@ -195,6 +172,8 @@ JinbonSDK.shared.verifyMedia(data: Data, ext: String) -> String?
 // 사용법
 let result = JinbonSDK.shared.verifyMedia(data: imageData, ext: "jpg")
 ```
+
+파일 시스템에 저장된 미디어 파일의 진위성을 검증합니다. 파일 경로를 통해 접근하여 분석합니다.
 
 ```swift
 // 파일 검증
@@ -206,6 +185,8 @@ let result = JinbonSDK.shared.verifyMedia(fileURL: imageURL, ext: "jpg")
 
 ### 카메라 기능
 
+SDK에 내장된 카메라 화면을 표시하여 사진을 촬영할 수 있습니다. 촬영과 동시에 메타데이터를 수집하고 C2PA 서명을 적용할 수 있습니다.
+
 ```swift
 // 카메라 화면 표시
 JinbonSDK.shared.presentCamera(from: UIViewController, delegate: CameraViewControllerDelegate)
@@ -214,43 +195,8 @@ JinbonSDK.shared.presentCamera(from: UIViewController, delegate: CameraViewContr
 JinbonSDK.shared.presentCamera(from: self, delegate: self)
 ```
 
-### 위치 권한
 
-```swift
-// 위치 권한 상태 확인
-JinbonSDK.shared.locationAuthorizationStatus() -> CLAuthorizationStatus
 
-// 사용법
-let status = JinbonSDK.shared.locationAuthorizationStatus()
-```
-
-```swift
-// 위치 권한 요청
-JinbonSDK.shared.requestLocationPermission()
-
-// 사용법
-JinbonSDK.shared.requestLocationPermission()
-```
-
-### 설정 관리
-
-```swift
-// 설정 매니저 조회
-JinbonSDK.shared.getSettingsManager() -> SettingsManager
-
-// 사용법
-let settingsManager = JinbonSDK.shared.getSettingsManager()
-```
-
-### 속성 접근
-
-```swift
-// 현재 사용자 정보
-JinbonSDK.shared.currentUser: User?
-
-// 현재 회사 정보
-JinbonSDK.shared.currentCompany: Company?
-```
 
 ## 델리게이트 프로토콜
 
@@ -300,5 +246,3 @@ do {
 - **Swift**: 5.0 이상
 
 ---
-
-더 많은 예제와 튜토리얼은 [개발자 문서](https://developers.digicap.com)에서 확인하실 수 있습니다. 
