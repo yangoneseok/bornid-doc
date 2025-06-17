@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'BornID API Documentation',
+  title: 'BornID',
   tagline: 'API 문서화 사이트',
   favicon: 'img/favicon.ico',
 
@@ -44,8 +44,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/bornid/bornid-doc/tree/main/',
+          editUrl: 'https://github.com/bornid/bornid-doc/tree/main/',
           routeBasePath: 'docs', // docs를 기본 경로로 설정
         },
         blog: false, // 블로그 기능 비활성화
@@ -60,7 +59,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'BornID API Documentation',
+      title: 'BornID',
       logo: {
         alt: 'BornID Logo',
         src: 'img/logo.svg',
