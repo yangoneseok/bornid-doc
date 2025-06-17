@@ -1,0 +1,296 @@
+.technologyComponentsSection {
+  padding: 6rem 0;
+
+  background: linear-gradient(135deg, #fafbfc 0%, #f8fafc 50%, #f1f5f9 100%);
+  position: relative;
+
+  border-top: 1px solid var(--section-separator);
+}
+
+[data-theme='dark'] .technologyComponentsSection {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.3) 0%,
+    rgba(30, 41, 59, 0.3) 50%,
+    rgba(51, 65, 85, 0.2) 100%
+  );
+  border-top: 1px solid var(--section-separator-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-content);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.componentCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 0 0 1px rgba(0, 122, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme='dark'] .componentCard {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 0 0 1px rgba(10, 132, 255, 0.08);
+}
+
+.componentCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px var(--glass-shadow), 0 0 0 1px rgba(0, 122, 255, 0.15);
+  border-color: rgba(0, 122, 255, 0.2);
+}
+
+[data-theme='dark'] .componentCard:hover {
+  box-shadow: 0 16px 48px var(--glass-shadow), 0 0 0 1px rgba(10, 132, 255, 0.2);
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.iconContainer {
+  width: 4rem;
+  height: 4rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 255, 0.1),
+    rgba(0, 122, 255, 0.05)
+  );
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-theme='dark'] .iconContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 132, 255, 0.15),
+    rgba(10, 132, 255, 0.08)
+  );
+  border-color: rgba(10, 132, 255, 0.3);
+}
+
+.icon {
+  color: var(--ifm-color-primary);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-theme='dark'] .icon {
+  color: var(--ifm-color-primary-light);
+}
+
+.cardTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ifm-color-content);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardDescription {
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--ifm-color-primary);
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* 호버 효과 개선 */
+.componentCard:hover .iconContainer {
+  transform: scale(1.1);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 255, 0.15),
+    rgba(0, 122, 255, 0.08)
+  );
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+[data-theme='dark'] .componentCard:hover .iconContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 132, 255, 0.2),
+    rgba(10, 132, 255, 0.1)
+  );
+  border-color: rgba(10, 132, 255, 0.4);
+}
+
+.componentCard:hover .icon {
+  color: var(--ifm-color-primary-dark);
+  transform: scale(1.1);
+}
+
+[data-theme='dark'] .componentCard:hover .icon {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* 포커스 접근성 */
+.componentCard:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+  .componentCard {
+    transition: none;
+  }
+
+  .componentCard:hover {
+    transform: none;
+  }
+
+  .visible {
+    animation: none;
+  }
+
+  .hidden {
+    opacity: 1;
+    transform: none;
+  }
+
+  .componentCard:hover .iconContainer,
+  .componentCard:hover .icon {
+    transform: none;
+  }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 767px) {
+  .technologyComponentsSection {
+    padding: 4rem 0;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .componentCard {
+    padding: 1.5rem;
+  }
+
+  .iconContainer {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDescription {
+    font-size: 0.95rem;
+  }
+
+  .detailItem {
+    font-size: 0.85rem;
+  }
+}

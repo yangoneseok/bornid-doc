@@ -1,0 +1,344 @@
+.section {
+  padding: 6rem 0;
+
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  position: relative;
+
+  border-top: 1px solid var(--section-separator);
+}
+
+[data-theme='dark'] .section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  border-top: 1px solid var(--section-separator-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  color: var(--ifm-color-content);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.content {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  min-height: 40rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 4rem;
+    min-height: 50rem;
+  }
+}
+
+.centerImage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.imageContainer {
+  width: 16rem;
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 48px var(--glass-shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.diagramImage {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 8px rgba(0, 122, 255, 0.15));
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.imageContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 64px var(--glass-shadow);
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.imageContainer:hover .diagramImage {
+  transform: scale(1.02);
+}
+
+[data-theme='dark'] .diagramImage {
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1)) brightness(0.9);
+}
+
+.topLeft {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.topRight {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.bottomLeft {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.bottomRight {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 4rem;
+  padding-top: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .topLeft,
+  .bottomLeft {
+    padding-right: 6rem;
+  }
+
+  .topRight,
+  .bottomRight {
+    padding-left: 6rem;
+  }
+}
+
+.useCaseRight,
+.useCaseLeft {
+  max-width: 20rem;
+
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-theme='dark'] .useCaseRight,
+[data-theme='dark'] .useCaseLeft {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+}
+
+.useCaseRight {
+  text-align: right;
+}
+
+.useCaseTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-color-content);
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+
+.useCaseList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.useCaseItemLeft,
+.useCaseItemRight {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.useCaseItemRight {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.useCaseItemLeft {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* 불릿 포인트 스타일 - 더 세련되게 */
+.bulletLeft,
+.bulletRight {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary),
+    var(--ifm-color-primary-light)
+  );
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.3);
+}
+
+.bulletLeft {
+  margin-right: 0.75rem;
+}
+
+.bulletRight {
+  margin-left: 0.75rem;
+}
+
+/* 호버 효과 개선 */
+.useCaseItemLeft:hover,
+.useCaseItemRight:hover {
+  color: var(--ifm-color-content);
+}
+
+.useCaseRight:hover,
+.useCaseLeft:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 64px var(--glass-shadow);
+  border-color: rgba(0, 122, 255, 0.2);
+}
+
+[data-theme='dark'] .useCaseRight:hover,
+[data-theme='dark'] .useCaseLeft:hover {
+  border-color: rgba(10, 132, 255, 0.3);
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+  .useCaseItemLeft:hover,
+  .useCaseItemRight:hover,
+  .useCaseRight:hover,
+  .useCaseLeft:hover,
+  .imageContainer:hover {
+    transform: none;
+  }
+
+  .imageContainer:hover .diagramImage {
+    transform: none;
+  }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    min-height: 30rem;
+  }
+
+  .topLeft,
+  .bottomLeft {
+    padding-right: 2rem;
+  }
+
+  .topRight,
+  .bottomRight {
+    padding-left: 2rem;
+  }
+
+  .topLeft,
+  .topRight {
+    padding-bottom: 1rem;
+  }
+
+  .bottomLeft,
+  .bottomRight {
+    padding-top: 1rem;
+  }
+
+  .imageContainer {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .useCaseRight,
+  .useCaseLeft {
+    max-width: 16rem;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .useCaseTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .useCaseItemLeft,
+  .useCaseItemRight {
+    font-size: 0.9rem;
+  }
+}
