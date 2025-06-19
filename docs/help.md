@@ -12,7 +12,7 @@ DigiCAP Content Authenticity 서비스 사용 중 궁금한 점이나 문제가 
 ### 기본 사용법
 
 **Q: API 키는 어떻게 발급받나요?**
-A: [DigiCAP 개발자 포털](https://developers.digicap.com)에서 계정을 생성하고 API 키를 발급받을 수 있습니다. 무료 티어에서는 월 1,000회까지 무료로 사용 가능합니다.
+A: [BornID](https://bornid.io)에서 계정을 생성하고 API 키를 발급받을 수 있습니다.(회원가입 이후 사용가능)
 
 **Q: 지원되는 파일 형식이 무엇인가요?**
 A: 현재 지원되는 형식은 다음과 같습니다:
@@ -140,70 +140,4 @@ async function verifyWithCache(file) {
 ### 기술 지원
 
 **📧 이메일 지원**
-- 일반 문의: [support@digicap.com](mailto:support@digicap.com)
-- 개발자 지원: [dev-support@digicap.com](mailto:dev-support@digicap.com)
-- 엔터프라이즈: [enterprise@digicap.com](mailto:enterprise@digicap.com)
-
-**💬 실시간 채팅**
-- 업무시간(평일 9-18시): [라이브 채팅](https://digicap.com/chat)
-- 평균 응답시간: 30분 이내
-
-**📞 전화 지원**
-- 한국: +82-2-1234-5678
-- 미국: +1-555-123-4567
-- 지원시간: 평일 9-18시 (KST)
-
-### 커뮤니티
-
-**🎮 Discord**
-- [DigiCAP 개발자 커뮤니티](https://discord.gg/digicap-dev)
-- 24/7 커뮤니티 지원
-- 개발자들과의 실시간 소통
-
-**📚 GitHub**
-- [코드 예제](https://github.com/digicap/examples)
-- [SDK 소스코드](https://github.com/digicap/sdks)
-- 이슈 리포팅 및 기능 요청
-
-**🎥 YouTube**
-- [DigiCAP 개발자 채널](https://youtube.com/digicap-dev)
-- 튜토리얼 및 웨비나
-- 새로운 기능 소개
-
-## 상태 페이지
-
-실시간 서비스 상태를 확인하세요:
-
-**🟢 API 서버**: 정상 운영  
-**🟢 데이터베이스**: 정상 운영  
-**🟡 파일 처리**: 지연 중 (평균 +2초)  
-**🟢 인증 서버**: 정상 운영  
-
-[전체 상태 페이지 보기](https://status.digicap.com)
-
-## 서비스 수준 계약 (SLA)
-
-| 서비스 | 가용성 목표 | 응답 시간 |
-|--------|-------------|-----------|
-| **API 엔드포인트** | 99.9% | < 500ms |
-| **파일 처리** | 99.5% | < 5초 |
-| **기술 지원** | - | < 4시간 |
-
-## 피드백
-
-서비스 개선을 위한 피드백을 환영합니다:
-
-**📝 피드백 양식**
-- [기능 요청](https://digicap.com/feature-request)
-- [버그 리포트](https://digicap.com/bug-report)  
-- [사용성 개선](https://digicap.com/ux-feedback)
-
-**⭐ 평가하기**
-현재 서비스에 대한 평가를 남겨주세요:
-- [Google Play Store](https://play.google.com/store/apps/details?id=com.digicap.app)
-- [App Store](https://apps.apple.com/app/digicap/id123456789)
-
----
-
-**24/7 긴급 지원**  
-중요한 프로덕션 이슈의 경우 [emergency@digicap.com](mailto:emergency@digicap.com)으로 연락주세요. 
+- 서비스 및 기술 문의: [info-bornid@digicaps.com](mailto:info-bornid@digicaps.com)
