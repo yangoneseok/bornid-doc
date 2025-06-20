@@ -134,6 +134,10 @@ pre,
   font-family: var(--ifm-font-family-monospace) !important;
 }
 
+[data-theme='light'] .markdown pre code {
+  background-color: #e9ecef;
+}
+
 a,
 button,
 [role='button'] {
