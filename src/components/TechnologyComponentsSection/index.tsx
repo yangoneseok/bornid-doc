@@ -168,7 +168,7 @@ export default function TechnologyComponentsSection(): ReactNode {
         <div className={styles.header}>
           <Heading as="h2" className={styles.title}>
             <Translate id="homepage.techcomponents.title">
-              C2PA 기술 요소
+              기술 구성 요소
             </Translate>
           </Heading>
         </div>

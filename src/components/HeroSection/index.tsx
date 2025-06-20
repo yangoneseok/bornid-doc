@@ -55,8 +55,9 @@ export default function HeroSection(): ReactNode {
               id="homepage.hero.subtitle"
               description="메인 페이지 히어로 섹션의 부제목"
             >
-              C2PA 표준 기반의 콘텐츠 진위성 검증 API. AI 지문인식과 디지털
-              서명으로 이미지·영상의 출처와 무결성을 실시간 검증합니다.
+              C2PA 표준을 기반으로 한 콘텐츠 진위성 검증 서비스입니다. AI
+              지문인식과 디지털 서명을 통해 이미지와 영상의 출처 및 무결성을
+              확인하세요.
             </Translate>
           </p>
 

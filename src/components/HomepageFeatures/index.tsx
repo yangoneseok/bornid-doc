@@ -68,7 +68,7 @@ export default function HomepageFeatures(): ReactNode {
       title: '개발자 친화적 SDK',
       descriptionKey: 'homepage.solution.sdk.description',
       description:
-        'JavaScript, Python, Java, Swift 등 다양한 언어로 제공되는 SDK로 쉽게 통합할 수 있습니다.',
+        '현재 iOS(Swift)용 SDK를 제공하고 있으며, 앞으로 Android도 지원할 예정입니다. BornID의 강력한 기능을 모바일 앱에 쉽게 통합해 보세요.',
       Icon: TerminalSquare,
     },
   ];
@@ -84,7 +84,7 @@ export default function HomepageFeatures(): ReactNode {
           </Heading>
           <p className={styles.subtitle}>
             <Translate id="homepage.solution.subtitle">
-              디지털 콘텐츠 진위성 검증을 위한 강력하고 신뢰할 수 있는 솔루션을
+              디지털 콘텐츠 진위성 검증을 위한 신뢰할 수 있는 솔루션을
               제공합니다.
             </Translate>
           </p>

@@ -57,15 +57,11 @@ export default function TechnologyOverviewSection(): ReactNode {
               </p>
             </div>
             <div className={styles.imageContainer}>
-              <div
-                className={`${styles.placeholder} ${styles.c2paPlaceholder}`}
-              >
-                <p className={styles.placeholderText}>
-                  <Translate id="homepage.technology.c2pa.diagram">
-                    C2PA 기술 개념도
-                  </Translate>
-                </p>
-              </div>
+              <img
+                src="/img/img1.jpg"
+                alt="C2PA 기술 개념을 표현하는 추상적인 데이터 흐름 이미지"
+                className={styles.overviewImage}
+              />
             </div>
           </div>
 
@@ -76,15 +72,11 @@ export default function TechnologyOverviewSection(): ReactNode {
             } ${isVisible ? styles.visible : styles.hidden}`}
           >
             <div className={styles.imageContainer}>
-              <div
-                className={`${styles.placeholder} ${styles.credentialsPlaceholder}`}
-              >
-                <p className={styles.placeholderText}>
-                  <Translate id="homepage.technology.credentials.diagram">
-                    콘텐츠 검증 프로세스
-                  </Translate>
-                </p>
-              </div>
+              <img
+                src="/img/img2.jpg"
+                alt="콘텐츠 크레덴셜의 필요성을 나타내는 디지털 네트워크 이미지"
+                className={styles.overviewImage}
+              />
             </div>
             <div className={styles.textContent}>
               <Heading as="h3" className={styles.subtitle}>
