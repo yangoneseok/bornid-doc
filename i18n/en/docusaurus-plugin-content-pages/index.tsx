@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import FeaturesSection from '@site/src/components/FeaturesSection';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import TechnologyOverviewSection from '@site/src/components/TechnologyOverviewSection';
 import TechnologyComponentsSection from '@site/src/components/TechnologyComponentsSection';
 import UseCasesSection from '@site/src/components/UseCasesSection';
@@ -17,6 +18,7 @@ export default function Home(): ReactNode {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <HomepageFeatures />
         <TechnologyOverviewSection />
         <TechnologyComponentsSection />
         <UseCasesSection />

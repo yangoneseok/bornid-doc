@@ -321,5 +321,278 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "homepage.hero.subtitle": {
+    "message": "C2PA standard-based content authenticity verification API. Real-time verification of image and video origin and integrity through AI fingerprinting and digital signatures.",
+    "description": "Hero section subtitle"
+  },
+  "homepage.hero.button.docs": {
+    "message": "📚 View API Docs",
+    "description": "Hero section docs button text"
+  },
+  "homepage.hero.button.sdks": {
+    "message": "🚀 Download SDKs",
+    "description": "Hero section SDKs button text"
+  },
+  "homepage.hero.feature.authenticity": {
+    "message": "Content Authenticity",
+    "description": "Hero section authenticity feature"
+  },
+  "homepage.hero.feature.provenance": {
+    "message": "Provenance Tracking",
+    "description": "Hero section provenance feature"
+  },
+  "homepage.hero.feature.verification": {
+    "message": "Digital Verification",
+    "description": "Hero section verification feature"
+  },
+  "homepage.features.title": {
+    "message": "Why Choose BornID?",
+    "description": "Features section title"
+  },
+  "homepage.features.subtitle": {
+    "message": "Discover why digital content authenticity verification is necessary and the problems BornID solves.",
+    "description": "Features section subtitle"
+  },
+  "homepage.features.fakenews.title": {
+    "message": "Fake News Generation",
+    "description": "Fake news feature title"
+  },
+  "homepage.features.fakenews.description": {
+    "message": "False information presented in news format causes reputation damage to individuals and organizations and social confusion",
+    "description": "Fake news feature description"
+  },
+  "homepage.features.copyright.title": {
+    "message": "Copyright Disputes",
+    "description": "Copyright feature title"
+  },
+  "homepage.features.copyright.description": {
+    "message": "Intellectual property infringement and ownership disputes caused by AI-generated content",
+    "description": "Copyright feature description"
+  },
+  "homepage.features.cybercrime.title": {
+    "message": "Digital Sex Crimes",
+    "description": "Cybercrime feature title"
+  },
+  "homepage.features.cybercrime.description": {
+    "message": "Privacy violations and increased criminal risks due to deepfake technology abuse",
+    "description": "Cybercrime feature description"
+  },
+  "homepage.features.manipulation.title": {
+    "message": "Content Manipulation",
+    "description": "Manipulation feature title"
+  },
+  "homepage.features.manipulation.description": {
+    "message": "Decreased private trust due to content forgery and manipulation",
+    "description": "Manipulation feature description"
+  },
+  "homepage.technology.title": {
+    "message": "Technology Overview",
+    "description": "Technology overview section title"
+  },
+  "homepage.technology.c2pa.title": {
+    "message": "What is C2PA (Coalition for Content Provenance and Authenticity)?",
+    "description": "C2PA explanation title"
+  },
+  "homepage.technology.c2pa.description": {
+    "message": "C2PA is an open technical standard that enables verification of the source and authenticity of digital content. Also known as \"Content Credentials,\" this technology enables secure recording and tracking of the history (provenance) of digital media from creation through editing to distribution.",
+    "description": "C2PA technology description"
+  },
+  "homepage.technology.c2pa.diagram": {
+    "message": "C2PA Technology Concept Diagram",
+    "description": "C2PA technology concept diagram placeholder text"
+  },
+  "homepage.technology.credentials.title": {
+    "message": "The Need for Content Credentials",
+    "description": "Content credentials necessity title"
+  },
+  "homepage.technology.credentials.description": {
+    "message": "In an environment where digital content manipulation is becoming easier and misinformation spreads rapidly, there is a growing need to record and verify the origin and change history of content in a reliable way. The C2PA open technical standard was developed to solve the following problems:",
+    "description": "Content credentials necessity description"
+  },
+  "homepage.technology.credentials.diagram": {
+    "message": "Content Verification Process",
+    "description": "Content verification process placeholder text"
+  },
+  "homepage.technology.benefits.transparency": {
+    "message": "Transparently provide the origin and change history of digital content",
+    "description": "Transparency benefit"
+  },
+  "homepage.technology.benefits.identification": {
+    "message": "Support identification of intentional misinformation or manipulated content",
+    "description": "Misinformation identification benefit"
+  },
+  "homepage.technology.benefits.protection": {
+    "message": "Protect content creators' rights",
+    "description": "Rights protection benefit"
+  },
+  "homepage.technology.benefits.trust": {
+    "message": "Restore trust in media",
+    "description": "Trust restoration benefit"
+  },
+  "homepage.components.title": {
+    "message": "Technology Components",
+    "description": "Technology components section title"
+  },
+  "homepage.components.manifest.title": {
+    "message": "Manifest",
+    "description": "Manifest component title"
+  },
+  "homepage.components.manifest.description": {
+    "message": "The core data structure of C2PA that contains provenance information of assets and consists of the following elements.",
+    "description": "Manifest component description"
+  },
+  "homepage.components.binding.title": {
+    "message": "Binding",
+    "description": "Binding component title"
+  },
+  "homepage.components.binding.description": {
+    "message": "A mechanism that connects content and manifests, with two types available.",
+    "description": "Binding component description"
+  },
+  "homepage.components.trust.title": {
+    "message": "Trust Model",
+    "description": "Trust model component title"
+  },
+  "homepage.components.trust.description": {
+    "message": "C2PA verifies content authenticity through digital signatures using X.509 certificates.",
+    "description": "Trust model component description"
+  },
+  "homepage.usecases.title": {
+    "message": "Use Cases",
+    "description": "Use cases section title"
+  },
+
+  "homepage.usecases.journalism.title": {
+    "message": "Journalism/Social Media",
+    "description": "Journalism/Social Media use case title"
+  },
+  "homepage.usecases.creative.title": {
+    "message": "Creative Industry",
+    "description": "Creative Industry use case title"
+  },
+  "homepage.usecases.ai.title": {
+    "message": "AI-Generated Content",
+    "description": "AI-Generated Content use case title"
+  },
+  "homepage.usecases.government.title": {
+    "message": "Government/Public Institutions",
+    "description": "Government/Public Institutions use case title"
+  },
+  "homepage.usecases.journalism.item1": {
+    "message": "Provide source and editing history of news content",
+    "description": "Journalism use case item 1"
+  },
+  "homepage.usecases.journalism.item2": {
+    "message": "Verify the source of uploaded content",
+    "description": "Journalism use case item 2"
+  },
+  "homepage.usecases.creative.item1": {
+    "message": "Protect copyright and specify source of digital content",
+    "description": "Creative industry use case item 1"
+  },
+  "homepage.usecases.ai.item1": {
+    "message": "Display AI-generated content and provide information about the models used",
+    "description": "AI content use case item 1"
+  },
+  "homepage.usecases.government.item1": {
+    "message": "Ensure authenticity of official documents and records",
+    "description": "Government use case item 1"
+  },
+  "homepage.solution.title": {
+    "message": "BornID Core Features",
+    "description": "Solution section title"
+  },
+  "homepage.solution.subtitle": {
+    "message": "Providing powerful and reliable solutions for digital content authenticity verification.",
+    "description": "Solution section subtitle"
+  },
+  "homepage.solution.c2pa.title": {
+    "message": "C2PA Standard Based",
+    "description": "C2PA solution feature title"
+  },
+  "homepage.solution.c2pa.description": {
+    "message": "Fully compliant with the international C2PA standard, perfectly compatible with tools from major companies like Adobe and Microsoft.",
+    "description": "C2PA solution feature description"
+  },
+  "homepage.solution.fingerprinting.title": {
+    "message": "AI Fingerprinting Technology",
+    "description": "Fingerprinting solution feature title"
+  },
+  "homepage.solution.fingerprinting.description": {
+    "message": "Provides robust technology that extracts unique features of images and videos using CNN-based deep learning.",
+    "description": "Fingerprinting solution feature description"
+  },
+  "homepage.solution.sdk.title": {
+    "message": "Developer-Friendly SDK",
+    "description": "SDK solution feature title"
+  },
+  "homepage.solution.sdk.description": {
+    "message": "SDKs available in various languages including JavaScript, Python, Java, and Swift allow easy integration.",
+    "description": "SDK solution feature description"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Search by Algolia",
+    "description": "The label for Algolia search"
+  },
+  "homepage.techcomponents.title": {
+    "message": "C2PA Technical Components",
+    "description": "The title for the technology components section"
+  },
+  "homepage.techcomponents.manifest.title": {
+    "message": "Manifest",
+    "description": "Title for the Manifest feature card"
+  },
+  "homepage.techcomponents.manifest.description": {
+    "message": "The core data structure of C2PA, containing provenance information for an asset, and consists of the following elements.",
+    "description": "Description for the Manifest feature card"
+  },
+  "homepage.techcomponents.manifest.item1": {
+    "message": "Assertions",
+    "description": "List item 1 for Manifest"
+  },
+  "homepage.techcomponents.manifest.item2": {
+    "message": "Claim",
+    "description": "List item 2 for Manifest"
+  },
+  "homepage.techcomponents.manifest.item3": {
+    "message": "Claim Signature",
+    "description": "List item 3 for Manifest"
+  },
+  "homepage.techcomponents.binding.title": {
+    "message": "Binding",
+    "description": "Title for the Binding feature card"
+  },
+  "homepage.techcomponents.binding.description": {
+    "message": "A mechanism that connects content and manifests, with two available types.",
+    "description": "Description for the Binding feature card"
+  },
+  "homepage.techcomponents.binding.item1": {
+    "message": "Hard Binding",
+    "description": "List item 1 for Binding"
+  },
+  "homepage.techcomponents.binding.item2": {
+    "message": "Soft Binding",
+    "description": "List item 2 for Binding"
+  },
+  "homepage.techcomponents.trust.title": {
+    "message": "Trust Model",
+    "description": "Title for the Trust Model feature card"
+  },
+  "homepage.techcomponents.trust.description": {
+    "message": "C2PA verifies the authenticity of content through digital signatures using X.509 certificates.",
+    "description": "Description for the Trust Model feature card"
+  },
+  "homepage.techcomponents.trust.item1": {
+    "message": "C2PA Trust List",
+    "description": "List item 1 for Trust Model"
+  },
+  "homepage.techcomponents.trust.item2": {
+    "message": "C2PA TSA Trust List",
+    "description": "List item 2 for Trust Model"
+  },
+  "homepage.techcomponents.trust.item3": {
+    "message": "Validation Status",
+    "description": "List item 3 for Trust Model"
   }
 }

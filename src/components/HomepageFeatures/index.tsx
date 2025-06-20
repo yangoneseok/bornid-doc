@@ -1,68 +1,106 @@
-import type { ReactNode } from 'react';
-import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import { useRevealOnScroll } from '@site/src/hooks/useRevealOnScroll';
+import { ShieldCheck, Fingerprint, TerminalSquare } from 'lucide-react';
 
-type FeatureItem = {
+interface FeatureItemProps {
+  titleKey: string;
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
-};
+  descriptionKey: string;
+  description: string;
+  Icon: React.ComponentType<{ className?: string; size?: number }>;
+  index: number;
+}
 
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'C2PA 표준 기반',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        국제 표준 C2PA를 완전히 준수하여 Adobe, Microsoft 등 주요 업체의
-        도구와 완벽하게 호환됩니다. 디지털 서명과 메타데이터로 콘텐츠 무결성을 보장합니다.
-      </>
-    ),
-  },
-  {
-    title: 'AI 지문인식 기술',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        CNN 기반 딥러닝으로 이미지와 영상의 고유한 특징을 추출합니다.
-        압축, 크기 조정에도 견고한 <code>Fingerprinting</code> 기술을 제공합니다.
-      </>
-    ),
-  },
-  {
-    title: '개발자 친화적 SDK',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        JavaScript, Python, Java, Swift 등 다양한 언어로 제공되는 SDK로
-        쉽고 빠르게 Content Authenticity 기능을 통합할 수 있습니다.
-      </>
-    ),
-  },
-];
-
-function Feature({ title, Svg, description }: FeatureItem) {
+function FeatureItem({
+  titleKey,
+  title,
+  descriptionKey,
+  description,
+  Icon,
+  index,
+}: FeatureItemProps) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <div className={styles.featureItem} data-index={index}>
+      <div className={styles.featureIconContainer}>
+        <Icon className={styles.featureIcon} size={32} />
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={styles.featureContent}>
+        <Heading as="h3" className={styles.featureTitle}>
+          <Translate id={titleKey}>{title}</Translate>
+        </Heading>
+        <p className={styles.featureDescription}>
+          <Translate id={descriptionKey}>{description}</Translate>
+        </p>
       </div>
     </div>
   );
 }
 
 export default function HomepageFeatures(): ReactNode {
+  const containerRef = useRevealOnScroll<HTMLDivElement>({
+    itemSelector: `.${styles.featureItem}`,
+    visibleClass: styles.visible,
+    animationDelayBase: 150,
+  });
+
+  const features = [
+    {
+      titleKey: 'homepage.solution.c2pa.title',
+      title: 'C2PA 표준 기반',
+      descriptionKey: 'homepage.solution.c2pa.description',
+      description:
+        '국제 표준 C2PA를 완전히 준수하여 Adobe, Microsoft 등 주요 업체의 도구와 완벽하게 호환됩니다.',
+      Icon: ShieldCheck,
+    },
+    {
+      titleKey: 'homepage.solution.fingerprinting.title',
+      title: 'AI 지문인식 기술',
+      descriptionKey: 'homepage.solution.fingerprinting.description',
+      description:
+        'CNN 기반 딥러닝으로 이미지와 영상의 고유한 특징을 추출하는 견고한 기술을 제공합니다.',
+      Icon: Fingerprint,
+    },
+    {
+      titleKey: 'homepage.solution.sdk.title',
+      title: '개발자 친화적 SDK',
+      descriptionKey: 'homepage.solution.sdk.description',
+      description:
+        'JavaScript, Python, Java, Swift 등 다양한 언어로 제공되는 SDK로 쉽게 통합할 수 있습니다.',
+      Icon: TerminalSquare,
+    },
+  ];
+
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+    <section className={styles.solutionSection}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <Heading as="h2" className={styles.title}>
+            <Translate id="homepage.solution.title">
+              BornID의 핵심 기능
+            </Translate>
+          </Heading>
+          <p className={styles.subtitle}>
+            <Translate id="homepage.solution.subtitle">
+              디지털 콘텐츠 진위성 검증을 위한 강력하고 신뢰할 수 있는 솔루션을
+              제공합니다.
+            </Translate>
+          </p>
+        </div>
+
+        <div className={styles.featuresGrid} ref={containerRef}>
+          {features.map((feature, index) => (
+            <FeatureItem
+              key={index}
+              titleKey={feature.titleKey}
+              title={feature.title}
+              descriptionKey={feature.descriptionKey}
+              description={feature.description}
+              Icon={feature.Icon}
+              index={index}
+            />
           ))}
         </div>
       </div>
