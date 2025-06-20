@@ -327,11 +327,11 @@
     "description": "Hero section subtitle"
   },
   "homepage.hero.button.docs": {
-    "message": "📚 View API Docs",
+    "message": "View API Docs",
     "description": "Hero section docs button text"
   },
   "homepage.hero.button.sdks": {
-    "message": "🚀 Download SDKs",
+    "message": "Download SDKs",
     "description": "Hero section SDKs button text"
   },
   "homepage.hero.feature.authenticity": {
