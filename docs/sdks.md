@@ -14,14 +14,14 @@ DigiCAP Content Authenticity 서비스를 쉽게 통합할 수 있도록 iOS SDK
 | **iOS** | v0.0.1 | ✅ 지원 | .a 파일 |
 | **Android** | - | 🔄 추후 지원 예정 | - |
 
-## iOS SDK (JinbonSDK)
+## iOS SDK (BornIDSDK)
 
 ### 설치
 
 현재 SDK는 `.a` 파일 형태로 제공할 예정입니다. 
 설치 방법에 대한 자세한 내용은 아래 이메일로 문의해 주세요.
 
-**문의**: info@digicaps.com
+**문의**: info.bornid@digicaps.com
 
 ### 초기화
 
@@ -237,7 +237,7 @@ do {
 
 ### 기술 지원
 
-- **이메일**: [info@digicaps.com](mailto:info@digicaps.com)
+- **이메일**: [info.bornid@digicaps.com](mailto:info.bornid@digicaps.com)
 
 ### 시스템 요구사항
 
