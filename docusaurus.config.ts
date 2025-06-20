@@ -61,8 +61,8 @@ const config: Config = {
     navbar: {
       title: 'BornID',
       logo: {
-        alt: 'BornID Logo',
-        src: 'img/logo.svg',
+        alt: 'Digicaps Logo',
+        src: 'img/digicaps.png',
       },
       items: [
         {
