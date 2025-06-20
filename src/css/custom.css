@@ -42,6 +42,8 @@
   --bornid-spacing-xl: 3rem; /* 48px */
   --bornid-spacing-2xl: 4rem; /* 64px */
   --bornid-spacing-3xl: 6rem; /* 96px */
+  --bornid-spacing-4xl: 8rem; /* 128px */
+  --bornid-spacing-5xl: 10rem; /* 160px */
 
   /* 디자인 시스템 - 타이포그래피 */
   --bornid-font-size-xs: 0.875rem; /* 14px */

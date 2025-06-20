@@ -1,5 +1,5 @@
 .featuresSection {
-  padding: var(--bornid-spacing-3xl) 0;
+  padding: var(--bornid-spacing-5xl) 0;
   background-color: var(--bornid-bg-white-subtle);
   position: relative;
 }
@@ -11,12 +11,12 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--bornid-spacing-sm);
+  padding: 0 var(--bornid-spacing-lg);
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--bornid-spacing-2xl);
+  margin-bottom: var(--bornid-spacing-3xl);
 }
 
 .title {
@@ -75,7 +75,6 @@
 [data-theme='dark'] .featureCard {
   box-shadow: var(--bornid-shadow-md);
   z-index: 1;
-  text-align: center;
 }
 
 .featureCard:hover {
@@ -132,12 +131,11 @@
 }
 
 .cardDescription {
-  line-height: 2;
   margin: 0;
+  min-height: 5rem;
   font-size: var(--bornid-font-size-lg);
   font-weight: 400;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding-bottom: var(--bornid-spacing-md);
   margin-bottom: var(--bornid-spacing-md);
 }
 
@@ -175,20 +173,29 @@
 .cardFooter {
   padding: var(--bornid-spacing-md);
   background-color: transparent;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardImage {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   padding: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border: 4px solid var(--ifm-card-background-color);
+  box-sizing: border-box;
+}
+
+.innerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 [data-theme='dark'] .cardImage {
-  border-color: var(--ifm-card-background-color);
+  border-color: #ffffff;
 }
 
 /* Accessibility */
@@ -233,7 +240,8 @@
   }
 
   .cardDescription {
-    font-size: var(--bornid-font-size-sm);
+    min-height: 4rem;
+    font-size: var(--bornid-font-size-base);
   }
 }
 

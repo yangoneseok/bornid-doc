@@ -1,6 +1,6 @@
 /* 솔루션 섹션 메인 컨테이너 */
 .solutionSection {
-  padding: var(--bornid-spacing-3xl) 0;
+  padding: var(--bornid-spacing-5xl) 0;
   background-color: var(--ifm-background-color);
   position: relative;
   /* border-top: 1px solid var(--ifm-color-emphasis-200); */
@@ -14,13 +14,13 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--bornid-spacing-sm);
+  padding: 0 var(--bornid-spacing-lg);
 }
 
 /* 헤더 영역 */
 .header {
   text-align: center;
-  margin-bottom: var(--bornid-spacing-2xl);
+  margin-bottom: var(--bornid-spacing-3xl);
 }
 
 .title {

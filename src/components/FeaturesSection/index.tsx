@@ -52,11 +52,9 @@ function FeatureCard({
         </ul>
       </div>
       <div className={styles.cardFooter}>
-        <img
-          src={imageSrc}
-          alt={titleText}
-          className={clsx(styles.cardImage, headerColorClass)}
-        />
+        <div className={clsx(styles.cardImage, headerColorClass)}>
+          <img src={imageSrc} alt={titleText} className={styles.innerImage} />
+        </div>
       </div>
     </div>
   );

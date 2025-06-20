@@ -1,5 +1,5 @@
 .useCasesSection {
-  padding: 8rem 0;
+  padding: var(--bornid-spacing-5xl) 0;
   background-color: var(--bornid-section-bg-accent);
   position: relative;
   overflow: hidden;
@@ -12,7 +12,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--bornid-spacing-sm);
+  padding: 0 var(--bornid-spacing-lg);
 }
 
 .header {
@@ -65,7 +65,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: var(--bornid-spacing-sm);
-  min-height: 40rem;
+  min-height: 30rem;
   align-items: center;
   justify-items: center;
 }
@@ -158,7 +158,7 @@
 }
 
 .useCaseListItem {
-  font-size: var(--bornid-font-size-sm);
+  font-size: var(--bornid-font-size-base);
   color: var(--ifm-color-content-secondary);
   line-height: 1.6;
 }
@@ -187,7 +187,7 @@
 }
 
 /* Mobile */
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -225,9 +225,7 @@
   .bottomRight .useCaseItemWrapper {
     flex-direction: column-reverse;
   }
-}
 
-@media (max-width: 767px) {
   .useCasesSection {
     padding: var(--bornid-spacing-2xl) 0;
   }

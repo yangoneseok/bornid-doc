@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: var(--bornid-spacing-3xl) 0;
+  padding: 0;
   background-color: var(--ifm-background-color);
 }
 
@@ -40,7 +40,7 @@
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 0 var(--bornid-spacing-sm);
+  padding: 0 var(--bornid-spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -106,7 +106,7 @@
   align-items: center;
   gap: var(--bornid-spacing-xs);
   padding: var(--bornid-spacing-sm) var(--bornid-spacing-md);
-  font-size: var(--bornid-font-size-base);
+  font-size: var(--bornid-font-size-lg);
   font-weight: 500;
   border-radius: var(--bornid-radius-sm);
   text-decoration: none;
