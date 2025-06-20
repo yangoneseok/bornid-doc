@@ -171,39 +171,78 @@ html {
 
 .footer {
   background-color: var(--ifm-background-color-secondary);
-  padding: 4rem 0;
+  padding: 2rem 0;
   border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 [data-theme='dark'] .footer {
   background-color: var(--ifm-background-color);
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.footer__title {
-  color: var(--ifm-color-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer__links {
-  margin-bottom: 2rem;
+  margin: 0;
 }
 
 .footer__link-item {
-  color: var(--ifm-color-content-secondary);
+  color: var(--ifm-color-primary) !important;
   transition: color 0.3s ease;
+  margin: 0;
+  padding: 0;
 }
 
-.footer__link-item:hover {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
+.footer__col {
+  margin: 0;
+}
+
+.footer__col ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer__col .footer__link-item:not(:last-child)::after {
+  content: '·';
+  color: var(--ifm-color-content-secondary);
+  position: absolute;
+  right: -0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer__col .footer__link-item {
+  position: relative;
+}
+
+.footer__title {
+  display: none;
 }
 
 .footer__copyright {
+  margin: 0;
+  order: -1;
   color: var(--ifm-color-content-secondary);
-  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .footer__copyright {
+    order: 0;
+  }
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-light) !important;
+  text-decoration: none;
 }
 
 /* Navbar 고정 시 스타일 변화 (선택적) */
@@ -239,28 +278,9 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* 스크롤바 스타일링 */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--ifm-background-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--ifm-color-emphasis-400);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ifm-color-emphasis-600);
-}
-
-/* 섹션 간 일관된 여백 */
 section {
-  padding: var(--bornid-spacing-3xl) 0;
+  position: relative;
+  overflow: hidden;
 }
 
 /* 모션 감소 설정 */

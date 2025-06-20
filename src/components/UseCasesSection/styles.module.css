@@ -192,7 +192,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     min-height: auto;
-    gap: 3rem;
+    gap: 5rem;
     justify-items: center;
   }
   .centerImageContainer {
@@ -219,11 +219,9 @@
     text-align: center !important;
     max-width: none;
   }
-  .topRight .useCaseItemWrapper {
-    flex-direction: column-reverse;
-  }
+  .topRight .useCaseItemWrapper,
   .bottomRight .useCaseItemWrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .useCasesSection {
@@ -234,6 +232,14 @@
   }
   .title {
     font-size: var(--bornid-font-size-3xl);
+  }
+
+  .bottomLeft .useCaseCard {
+    background-color: var(--bornid-primary-blue);
+  }
+
+  .bottomRight .useCaseCard {
+    background-color: var(--bornid-primary-skyblue);
   }
 }
 

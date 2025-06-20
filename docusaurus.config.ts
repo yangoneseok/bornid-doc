@@ -76,7 +76,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/born-id/bornid-doc',
+          href: 'https://github.com/born-id',
           label: 'GitHub',
           position: 'right',
         },
@@ -86,34 +86,20 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'API 문서',
+          title: 'Links', // 이 타이틀은 CSS로 숨겨집니다.
           items: [
             {
-              label: '시작하기',
+              label: 'API 문서',
               to: '/docs/',
             },
-          ],
-        },
-        {
-          title: '커뮤니티',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/bornid',
-            },
-          ],
-        },
-        {
-          title: '더보기',
-          items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/born-id/bornid-doc',
+              href: 'https://github.com/born-id',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} BornID, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DigiCAP, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -39,7 +39,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: var(--bornid-spacing-lg);
+  gap: var(--bornid-spacing-xl);
 }
 
 @media (min-width: 768px) {

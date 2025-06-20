@@ -210,7 +210,16 @@
   }
 
   .contentBlock {
-    gap: var(--bornid-spacing-xl);
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contentBlock .textContent {
+    order: 1;
+  }
+
+  .contentBlock .imageContainer {
+    order: 2;
   }
 
   .subtitle {
