@@ -305,3 +305,14 @@
 .case2 {
   background-color: var(--bornid-primary-skyblue);
 }
+
+.section {
+  padding: 8rem 0;
+  background-color: var(--bornid-bg-white-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .section {
+  background-color: var(--bornid-bg-white-subtle);
+}

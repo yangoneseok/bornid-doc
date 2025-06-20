@@ -1,11 +1,11 @@
 .featuresSection {
   padding: var(--bornid-spacing-3xl) 0;
-  background-color: var(--ifm-background-color-secondary);
+  background-color: var(--bornid-bg-white-subtle);
   position: relative;
 }
 
 [data-theme='dark'] .featuresSection {
-  background-color: var(--ifm-background-color);
+  background-color: var(--bornid-bg-white-subtle);
 }
 
 .container {
@@ -132,11 +132,11 @@
 }
 
 .cardDescription {
-  line-height: 1.6;
+  line-height: 2;
   margin: 0;
-  font-size: var(--bornid-font-size-base);
+  font-size: var(--bornid-font-size-lg);
   font-weight: 400;
-  border-bottom: 1px dashed var(--ifm-color-emphasis-300);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
   padding-bottom: var(--bornid-spacing-md);
   margin-bottom: var(--bornid-spacing-md);
 }
@@ -147,7 +147,7 @@
   padding-left: 0;
   margin: 0;
   text-align: left;
-  font-size: var(--bornid-font-size-sm);
+  font-size: var(--bornid-font-size-base);
   color: var(--ifm-color-content-secondary);
 }
 

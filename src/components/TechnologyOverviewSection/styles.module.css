@@ -1,13 +1,13 @@
 .technologySection {
   padding: var(--bornid-spacing-3xl) 0;
-  background-color: var(--ifm-background-color);
+  background-color: var(--bornid-bg-white-subtle);
   position: relative;
   overflow: hidden;
   /* border-top: 1px solid var(--ifm-color-emphasis-200); */
 }
 
 [data-theme='dark'] .technologySection {
-  background-color: var(--ifm-background-color-secondary);
+  background-color: var(--bornid-bg-white-subtle);
   /* border-top: 1px solid var(--ifm-color-emphasis-300); */
 }
 
@@ -90,19 +90,16 @@
 .textContent {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .subtitle {
-  font-size: var(--bornid-font-size-lg);
+  font-size: var(--bornid-font-size-xl);
   color: var(--ifm-color-content-secondary);
   max-width: 42rem;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: var(--bornid-font-size-base);
   color: var(--ifm-color-content-secondary);
   line-height: 1.7;
   margin: 0;
@@ -122,10 +119,10 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
+  font-size: var(--bornid-font-size-sm);
   color: var(--ifm-color-content-secondary);
   line-height: 1.6;
   font-weight: 400;
-  font-size: 1rem;
 }
 
 .bullet {
@@ -216,11 +213,12 @@
   }
 
   .subtitle {
-    font-size: var(--bornid-font-size-base);
+    font-size: var(--bornid-font-size-lg);
   }
 
   .description {
     font-size: var(--bornid-font-size-base);
+    margin-bottom: var(--bornid-spacing-md);
   }
 
   .featureItem {

@@ -31,7 +31,8 @@
   --bornid-primary-blue: #007aff; /* 메인 파란색 */
   --bornid-primary-skyblue: #5ac8fa; /* 메인 하늘색 */
   --bornid-primary-blue-hover: #0051d5;
-  --bornid-primary-skyblue-hover: #32b4f5;
+  --bornid-primary-skyblue-hover: #4ac1f7;
+  --bornid-section-bg-accent: #f8faff; /* 연한 파란색 계열 배경 */
 
   /* 디자인 시스템 - 스페이싱 (8px 기반) */
   --bornid-spacing-xs: 0.5rem; /* 8px */
@@ -69,11 +70,14 @@
   --bornid-radius-md: 0.75rem;
   --bornid-radius-lg: 1rem;
   --bornid-radius-xl: 1.5rem;
+
+  /* 수정된 배경색 변수 (이름 변경) */
+  --bornid-bg-white-subtle: rgb(255, 255, 255);
 }
 
 [data-theme='dark'] {
   --ifm-color-primary: #0a84ff;
-  --ifm-color-primary-dark: #0075e6;
+  --ifm-color-primary-dark: var(--bornid-primary-blue-hover);
   --ifm-color-primary-darker: #006be0;
   --ifm-color-primary-darkest: #0056b4;
   --ifm-color-primary-light: #3b9dff;
@@ -89,13 +93,17 @@
   --bornid-primary-blue: #0a84ff;
   --bornid-primary-skyblue: #6bbaff;
   --bornid-primary-blue-hover: #3b9dff;
-  --bornid-primary-skyblue-hover: #8ec8ff;
+  --bornid-primary-skyblue-hover: #7bcffb;
+  --bornid-section-bg-accent: #1a2a45; /* 어두운 파란색 계열 배경 */
 
   /* 다크모드 그림자 조정 */
   --bornid-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.2);
   --bornid-shadow-md: 0px 4px 12px rgba(0, 0, 0, 0.3);
   --bornid-shadow-lg: 0px 8px 20px rgba(0, 0, 0, 0.4);
   --bornid-shadow-xl: 0px 16px 32px rgba(0, 0, 0, 0.5);
+
+  /* 수정된 배경색 변수 (이름 변경) */
+  --bornid-bg-white-subtle: #17223b;
 }
 
 body {
@@ -267,12 +275,11 @@ section {
 /* 고대비 모드 지원 */
 @media (prefers-contrast: high) {
   :root {
-    --bornid-primary-blue: #0055cc;
-    --bornid-primary-skyblue: #0099ff;
+    --ifm-color-primary: #000;
+    --ifm-color-primary-dark: #000;
   }
-
   [data-theme='dark'] {
-    --bornid-primary-blue: #3399ff;
-    --bornid-primary-skyblue: #66ccff;
+    --ifm-color-primary: #fff;
+    --ifm-color-primary-dark: #fff;
   }
 }
