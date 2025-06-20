@@ -21,7 +21,7 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/bornid/bornid-doc"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/born-id/bornid-doc"
   },
   "copyright": {
     "message": "Copyright © 2025 BornID, Inc. Built with Docusaurus.",
