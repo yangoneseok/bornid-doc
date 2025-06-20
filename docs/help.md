@@ -41,4 +41,4 @@ A:
 ### 기술 지원
 
 **📧 이메일 지원**
-- 서비스 및 기술 문의: [info-bornid@digicaps.com](mailto:info-bornid@digicaps.com)
+- 서비스 및 기술 문의: [info.bornid@digicaps.com](mailto:info.bornid@digicaps.com)

@@ -59,4 +59,4 @@ DigiCAP의 Fingerprinting 기술은 CNN(Convolutional Neural Network) 기반의 
 - **해상도 및 화면비 변경**: 영상 크기를 조절하거나 화면 일부를 잘라내도 탐지가 가능
 - **보정 및 필터 적용**: 밝기, 대비, 색상 필터 등의 시각적 효과가 추가되어도 원본의 고유성을 유지
 
-기술 문의사항은 [info-bornid@digicaps.com](mailto:info-bornid@digicaps.com)로 연락주세요. 
+기술 문의사항은 [info.bornid@digicaps.com](mailto:info.bornid@digicaps.com)로 연락주세요. 
