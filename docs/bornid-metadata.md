@@ -3,7 +3,7 @@ title: Metadata
 sidebar_position: 2
 ---
 
-# BornID Metadata
+# Metadata
 
 BornID Metadata는 디지털 콘텐츠의 출처와 진위성을 보장하는 핵심 기술입니다. C2PA 표준을 기반으로 한 메타데이터 시스템을 통해 콘텐츠의 생성부터 배포까지 전 과정을 추적할 수 있습니다.
 
