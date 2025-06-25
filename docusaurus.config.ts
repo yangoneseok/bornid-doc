@@ -44,7 +44,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/born-id/bornid-doc/tree/main/',
+          // editUrl: 'https://github.com/born-id/bornid-doc/tree/main/',
           routeBasePath: 'docs', // docs를 기본 경로로 설정
         },
         blog: false, // 블로그 기능 비활성화
