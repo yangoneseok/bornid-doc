@@ -76,40 +76,6 @@ BornIDSDK.shared.fetchMyProfile() async throws -> User
 let user = try await BornIDSDK.shared.fetchMyProfile()
 ```
 
-### 회사 정보
-
-로그인한 사용자가 속한 회사의 정보를 조회할 수 있습니다.
-
-현재 사용자가 속한 회사의 이름을 가져옵니다.
-
-```swift
-// 현재 회사 이름 조회
-BornIDSDK.shared.getCurrentCompanyName() async -> String?
-
-// 사용법
-let companyName = await BornIDSDK.shared.getCurrentCompanyName()
-```
-
-특정 회사의 키 정보를 API에서 직접 조회합니다.
-
-```swift
-// 회사 키 정보 조회
-BornIDSDK.shared.getCompanyKeys(companyId: String) async throws -> CompanyKeysResponse
-
-// 사용법
-let keys = try await BornIDSDK.shared.getCompanyKeys(companyId: "company-id")
-```
-
-현재 사용자 회사의 키 정보를 로컬 캐시 또는 API에서 가져옵니다. 로컬에 저장된 키가 있으면 캐시에서 반환하고, 없으면 API로 조회 후 로컬에 저장합니다.
-
-```swift
-// 회사 키 정보 조회 (캐시 포함)
-BornIDSDK.shared.getCompanyKeysWithCache() async throws -> CompanyKeysResponse
-
-// 사용법
-let keys = try await BornIDSDK.shared.getCompanyKeysWithCache()
-```
-
 
 ### 미디어 업로드
 
@@ -151,68 +117,6 @@ BornIDSDK.shared.listMedia(
 
 // 사용법
 let mediaList = try await BornIDSDK.shared.listMedia(userId: "user-id", limit: 10)
-```
-
-### C2PA 미디어 서명
-
-미디어 파일에 C2PA (Coalition for Content Provenance and Authenticity) 서명을 추가하여 콘텐츠의 진위성과 출처를 보장합니다.
-
-메모리에 있는 미디어 데이터에 C2PA 서명을 추가합니다.
-
-```swift
-// 데이터 서명
-BornIDSDK.shared.signMedia(
-    assetData: Data,
-    thumbnailData: Data? = nil,
-    username: String,
-    company: String,
-    privateKeyData: Data,
-    publicKeyData: Data,
-    format: String,
-    additionalInfo: String? = nil,
-    latitude: Double = 0.0,
-    longitude: Double = 0.0
-) -> (signedImage: Data?, status: Int32, message: String?, manifestJson: String?)
-
-// 사용법
-let result = BornIDSDK.shared.signMedia(
-    assetData: imageData,
-    username: "사용자명",
-    company: "회사명",
-    privateKeyData: privateKey,
-    publicKeyData: publicKey,
-    format: "jpg",
-    latitude: 37.5665,
-    longitude: 126.9780
-)
-```
-
-파일 URL에서 미디어를 읽어 C2PA 서명을 추가합니다.
-
-```swift
-// 파일 URL 서명
-BornIDSDK.shared.signMedia(
-    assetFileURL: URL,
-    thumbnailFileURL: URL? = nil,
-    username: String,
-    company: String,
-    privateKeyData: Data,
-    publicKeyData: Data,
-    format: String,
-    additionalInfo: String? = nil,
-    latitude: Double = 0.0,
-    longitude: Double = 0.0
-) -> (signedImage: Data?, status: Int32, message: String?, manifestJson: String?)
-
-// 사용법
-let result = BornIDSDK.shared.signMedia(
-    assetFileURL: imageURL,
-    username: "사용자명",
-    company: "회사명",
-    privateKeyData: privateKey,
-    publicKeyData: publicKey,
-    format: "jpg"
-)
 ```
 
 ### 미디어 검증
@@ -301,44 +205,6 @@ protocol CameraViewControllerDelegate {
 enum MediaType {
     case image
     case video
-}
-```
-
-### User
-```swift
-struct User {
-    let id: String
-    let email: String
-    let name: String
-    let companyId: String
-    // 기타 사용자 정보
-}
-```
-
-### Company
-```swift
-struct Company {
-    let id: String
-    let name: String
-    // 기타 회사 정보
-}
-```
-
-### MediaListResponse
-```swift
-struct MediaListResponse {
-    let media: [Media]
-    let totalCount: Int
-    let hasMore: Bool
-    // 기타 응답 정보
-}
-```
-
-### CompanyKeysResponse
-```swift
-struct CompanyKeysResponse {
-    let publicKey: String
-    let privateKey: String
 }
 ```
 
