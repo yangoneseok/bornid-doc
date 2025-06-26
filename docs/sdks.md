@@ -26,10 +26,10 @@ DigiCAP Content Authenticity 서비스를 쉽게 통합할 수 있도록 iOS SDK
 ### 초기화
 
 ```swift
-import JinbonSDK
+import BornIDSDK
 
 // SDK 설정
-JinbonSDK.shared.configure(baseURL: URL, apiKey: String)
+BornIDSDK.shared.configure(baseURL: URL, apiKey: String)
 ```
 
 ## API 레퍼런스
@@ -40,40 +40,40 @@ JinbonSDK.shared.configure(baseURL: URL, apiKey: String)
 
 ```swift
 // 로그인
-JinbonSDK.shared.login(email: String, password: String) async throws -> User
+BornIDSDK.shared.login(email: String, password: String) async throws -> User
 
 // 사용법
-let user = try await JinbonSDK.shared.login(email: "user@example.com", password: "password")
+let user = try await BornIDSDK.shared.login(email: "user@example.com", password: "password")
 ```
 
 현재 로그인된 사용자의 세션을 종료합니다.
 
 ```swift
 // 로그아웃
-JinbonSDK.shared.logout() async
+BornIDSDK.shared.logout() async
 
 // 사용법
-await JinbonSDK.shared.logout()
+await BornIDSDK.shared.logout()
 ```
 
 사용자가 현재 로그인되어 있는지 확인합니다.
 
 ```swift
 // 로그인 상태 확인
-JinbonSDK.shared.isLoggedIn() async -> Bool
+BornIDSDK.shared.isLoggedIn() async -> Bool
 
 // 사용법
-let isLoggedIn = await JinbonSDK.shared.isLoggedIn()
+let isLoggedIn = await BornIDSDK.shared.isLoggedIn()
 ```
 
 최신 사용자 정보를 조회합니다.
 
 ```swift
 // 사용자 정보 갱신
-JinbonSDK.shared.fetchMyProfile() async throws -> User
+BornIDSDK.shared.fetchMyProfile() async throws -> User
 
 // 사용법
-let user = try await JinbonSDK.shared.fetchMyProfile()
+let user = try await BornIDSDK.shared.fetchMyProfile()
 ```
 
 ### 회사 정보
@@ -84,10 +84,30 @@ let user = try await JinbonSDK.shared.fetchMyProfile()
 
 ```swift
 // 현재 회사 이름 조회
-JinbonSDK.shared.getCurrentCompanyName() async -> String?
+BornIDSDK.shared.getCurrentCompanyName() async -> String?
 
 // 사용법
-let companyName = await JinbonSDK.shared.getCurrentCompanyName()
+let companyName = await BornIDSDK.shared.getCurrentCompanyName()
+```
+
+특정 회사의 키 정보를 API에서 직접 조회합니다.
+
+```swift
+// 회사 키 정보 조회
+BornIDSDK.shared.getCompanyKeys(companyId: String) async throws -> CompanyKeysResponse
+
+// 사용법
+let keys = try await BornIDSDK.shared.getCompanyKeys(companyId: "company-id")
+```
+
+현재 사용자 회사의 키 정보를 로컬 캐시 또는 API에서 가져옵니다. 로컬에 저장된 키가 있으면 캐시에서 반환하고, 없으면 API로 조회 후 로컬에 저장합니다.
+
+```swift
+// 회사 키 정보 조회 (캐시 포함)
+BornIDSDK.shared.getCompanyKeysWithCache() async throws -> CompanyKeysResponse
+
+// 사용법
+let keys = try await BornIDSDK.shared.getCompanyKeysWithCache()
 ```
 
 
@@ -97,7 +117,7 @@ let companyName = await JinbonSDK.shared.getCurrentCompanyName()
 
 ```swift
 // 미디어 업로드
-JinbonSDK.shared.uploadMedia(
+BornIDSDK.shared.uploadMedia(
     companyId: String, 
     data: Data, 
     mediaType: MediaType, 
@@ -107,7 +127,7 @@ JinbonSDK.shared.uploadMedia(
 ) async throws -> URL
 
 // 사용법
-let uploadURL = try await JinbonSDK.shared.uploadMedia(
+let uploadURL = try await BornIDSDK.shared.uploadMedia(
     companyId: "company-id",
     data: imageData,
     mediaType: .image,
@@ -123,19 +143,55 @@ let uploadURL = try await JinbonSDK.shared.uploadMedia(
 
 ```swift
 // 미디어 목록 조회
-JinbonSDK.shared.listMedia(
+BornIDSDK.shared.listMedia(
     userId: String, 
     limit: Int = 20, 
     offset: Int = 0
 ) async throws -> MediaListResponse
 
 // 사용법
-let mediaList = try await JinbonSDK.shared.listMedia(userId: "user-id", limit: 10)
+let mediaList = try await BornIDSDK.shared.listMedia(userId: "user-id", limit: 10)
 ```
+
+### C2PA 미디어 서명
+
+미디어 파일에 C2PA (Coalition for Content Provenance and Authenticity) 서명을 추가하여 콘텐츠의 진위성과 출처를 보장합니다.
+
+메모리에 있는 미디어 데이터에 C2PA 서명을 추가합니다.
+
+```swift
+// 데이터 서명
+BornIDSDK.shared.signMedia(
+    assetData: Data,
+    thumbnailData: Data? = nil,
+    username: String,
+    company: String,
+    privateKeyData: Data,
+    publicKeyData: Data,
+    format: String,
+    additionalInfo: String? = nil,
+    latitude: Double = 0.0,
+    longitude: Double = 0.0
+) -> (signedImage: Data?, status: Int32, message: String?, manifestJson: String?)
+
+// 사용법
+let result = BornIDSDK.shared.signMedia(
+    assetData: imageData,
+    username: "사용자명",
+    company: "회사명",
+    privateKeyData: privateKey,
+    publicKeyData: publicKey,
+    format: "jpg",
+    latitude: 37.5665,
+    longitude: 126.9780
+)
+```
+
+파일 URL에서 미디어를 읽어 C2PA 서명을 추가합니다.
 
 ```swift
 // 파일 URL 서명
-JinbonSDK.shared.signMedia(
+BornIDSDK.shared.signMedia(
     assetFileURL: URL,
     thumbnailFileURL: URL? = nil,
     username: String,
@@ -149,7 +205,7 @@ JinbonSDK.shared.signMedia(
 ) -> (signedImage: Data?, status: Int32, message: String?, manifestJson: String?)
 
 // 사용법
-let result = JinbonSDK.shared.signMedia(
+let result = BornIDSDK.shared.signMedia(
     assetFileURL: imageURL,
     username: "사용자명",
     company: "회사명",
@@ -167,20 +223,49 @@ let result = JinbonSDK.shared.signMedia(
 
 ```swift
 // 데이터 검증
-JinbonSDK.shared.verifyMedia(data: Data, ext: String) -> String?
+BornIDSDK.shared.verifyMedia(data: Data, ext: String) -> String?
 
 // 사용법
-let result = JinbonSDK.shared.verifyMedia(data: imageData, ext: "jpg")
+let result = BornIDSDK.shared.verifyMedia(data: imageData, ext: "jpg")
 ```
 
 파일 시스템에 저장된 미디어 파일의 진위성을 검증합니다. 파일 경로를 통해 접근하여 분석합니다.
 
 ```swift
 // 파일 검증
-JinbonSDK.shared.verifyMedia(fileURL: URL, ext: String) -> String?
+BornIDSDK.shared.verifyMedia(fileURL: URL, ext: String) -> String?
 
 // 사용법
-let result = JinbonSDK.shared.verifyMedia(fileURL: imageURL, ext: "jpg")
+let result = BornIDSDK.shared.verifyMedia(fileURL: imageURL, ext: "jpg")
+```
+
+### 위치 정보
+
+앱에서 위치 권한을 관리하고 현재 위치 정보를 확인할 수 있습니다.
+
+```swift
+// 위치 권한 상태 확인
+BornIDSDK.shared.locationAuthorizationStatus() -> CLAuthorizationStatus
+
+// 위치 권한 요청
+BornIDSDK.shared.requestLocationPermission()
+
+// 사용법
+if BornIDSDK.shared.locationAuthorizationStatus() == .notDetermined {
+    BornIDSDK.shared.requestLocationPermission()
+}
+```
+
+### 설정 관리
+
+SDK의 다양한 설정을 관리할 수 있습니다.
+
+```swift
+// 설정 매니저 접근
+BornIDSDK.shared.getSettingsManager() -> SettingsManager
+
+// 사용법
+let settingsManager = BornIDSDK.shared.getSettingsManager()
 ```
 
 ### 카메라 기능
@@ -189,10 +274,10 @@ SDK에 내장된 카메라 화면을 표시하여 사진을 촬영할 수 있습
 
 ```swift
 // 카메라 화면 표시
-JinbonSDK.shared.presentCamera(from: UIViewController, delegate: CameraViewControllerDelegate)
+BornIDSDK.shared.presentCamera(from: UIViewController, delegate: CameraViewControllerDelegate)
 
 // 사용법
-JinbonSDK.shared.presentCamera(from: self, delegate: self)
+BornIDSDK.shared.presentCamera(from: self, delegate: self)
 ```
 
 
@@ -219,13 +304,51 @@ enum MediaType {
 }
 ```
 
+### User
+```swift
+struct User {
+    let id: String
+    let email: String
+    let name: String
+    let companyId: String
+    // 기타 사용자 정보
+}
+```
+
+### Company
+```swift
+struct Company {
+    let id: String
+    let name: String
+    // 기타 회사 정보
+}
+```
+
+### MediaListResponse
+```swift
+struct MediaListResponse {
+    let media: [Media]
+    let totalCount: Int
+    let hasMore: Bool
+    // 기타 응답 정보
+}
+```
+
+### CompanyKeysResponse
+```swift
+struct CompanyKeysResponse {
+    let publicKey: String
+    let privateKey: String
+}
+```
+
 ## 에러 처리
 
 SDK의 모든 비동기 함수는 Swift의 표준 에러 처리 방식을 사용합니다:
 
 ```swift
 do {
-    let user = try await JinbonSDK.shared.login(email: email, password: password)
+    let user = try await BornIDSDK.shared.login(email: email, password: password)
     // 성공 처리
 } catch {
     // 에러 처리
